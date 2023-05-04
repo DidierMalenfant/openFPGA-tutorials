@@ -1,6 +1,6 @@
 # openFPGA-tutorials
 
-[![MIT License](https://img.shields.io/github/license/DidierMalenfant/toybox.py)](https://spdx.org/licenses/MIT.html)
+[![MIT License](https://img.shields.io/github/license/DidierMalenfant/openFPGA-tutorials)](https://spdx.org/licenses/MIT.html)
 
 ![openFPGA logo](https://user-images.githubusercontent.com/98774335/235419685-0848767a-f115-47c4-bea2-e3d655e3411d.png)
 
