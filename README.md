@@ -18,7 +18,7 @@ Feel free to join in the [discussions](https://github.com/DidierMalenfant/openFP
 
 ### Trademarks
 
-**openFPGA** and the **openFPGA** logo are registered trademark of [**Analogue**](https://www.analogue.co/).
+**openFPGA** and the **openFPGA** logo are trademarks of [**Analogue**](https://www.analogue.co/) Enterprises Ltd.
 **Quartus Lite** is a registered trademark of [**Intel**](https://intel.com/).
 
 This project is not affiliated, associated with, sponsored or supported by neither **Analogue** nor **Intel**.
