@@ -1,0 +1,30 @@
+#
+# openFPGA core config file
+#
+
+[Platform]
+name = "02 ColorTest"
+image = "../../assets/platform-image.png"
+short_name = "fpgatut02"
+category = "Tutorials"
+description = "openFPGA tutorials is a collection of code samples and resources to learn openFPGA development."
+info = "info.txt"
+
+[Build]
+version = "0.0.1"
+
+[Author]
+name = "dm"
+icon = "../../assets/core-author-icon.png"
+url = "https://github.com/DidierMalenfant/openFPGA-tutorials"
+
+[Bitstream]
+source = "_build/pfCoreTemplate/src/fpga/output_files/ap_core.rbf"
+
+[Video]
+width = 400
+height = 360
+aspect_w = 10
+aspect_h = 9
+rotation = 0
+mirror = 0

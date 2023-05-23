@@ -1,0 +1,5 @@
+openFPGA tutorials is a collection of code samples and resources to learn openFPGA development.
+
+This the 01_BasicTemplate core which replicate Analogue's core-template code and displays a grey square.
+
+More information at https://github.com/DidierMalenfant/openFPGA-tutorials

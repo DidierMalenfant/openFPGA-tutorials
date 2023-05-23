@@ -1,0 +1,5 @@
+openFPGA tutorials is a collection of code samples and resources to learn openFPGA development.
+
+This the 02_ColorTest core which displays a color gradient based on screen coordinates.
+
+More information at https://github.com/DidierMalenfant/openFPGA-tutorials
