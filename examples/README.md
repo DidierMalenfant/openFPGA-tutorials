@@ -6,29 +6,27 @@ This folder contains sample cores demonstrating various features of the openFPGA
 
 The build system relies on a docker image to provide consistent access to the Intel Quartus tools. You will therefore need to install [Docker Desktop](https://www.docker.com/get-started/) on your machine.
 
-You will also need to install the [pf-fpga-tools](https://pypi.org/project/pf-fpga-tools/), wich in turns requires a [supported](https://didier.malenfant.net/blog/nerdy/2022/08/17/installing-python.html) version of Python.
+You will also need to install the [pf-dev-tools](https://pypi.org/project/pf-dev-tools/), which in turns requires a [supported](https://didier.malenfant.net/blog/nerdy/2022/08/17/installing-python.html) version of Python.
 
-Finally you will need [GNU Make](https://www.gnu.org/software/make/) which will come built-in on macOS or Linux and [git](https://git-scm.com) which also comes built-in on macOS or Linux.
+Finally you will need [git](https://git-scm.com) unless you're on macOS or Linux in which case it comes built-in.
 
 ### Building the cores
 
 To build a core just cd into the example's folder and type:
 ```
-make
+pf make
 ```
 
 If you define `CORE_INSTALL_VOLUME` to be the name of your pocket SD card then
 ```
-make install
+pf install
 ```
 
-will install the core in the right location.
-
-`CORE_INSTALL_VOLUME` defaults to POCKET if not defined anywhere.
+will install the core in the right location. `CORE_INSTALL_VOLUME` defaults to `POCKET` if not defined anywhere.
 
 To clean the project type:
 ```
-make clean
+pf clean
 ```
 
 ### Core properties

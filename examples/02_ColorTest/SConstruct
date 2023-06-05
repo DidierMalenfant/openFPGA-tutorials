@@ -1,0 +1,10 @@
+# -- Makefile
+
+import pfTools
+
+# -- We need pf-dev-tools version 1.x.x
+pfTools.requires('1.0')
+
+env = pfTools.Environment(PF_CORE_TEMPLATE_REPO_TAG='v0.0.2_for_openFPGATutorials')
+
+env.OpenFPGACore('src/config.toml')

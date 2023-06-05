@@ -1,5 +1,0 @@
-#
-# Makefile
-#
-
-include ../makefile.env
