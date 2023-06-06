@@ -1,11 +1,11 @@
 # -- Makefile
 
-import pfTools
+import pfDevTools
 
-# -- We need pf-dev-tools version 1.x.x
-pfTools.requires('1.0')
+# -- We need pf-dev-tools version 1.x.x but at least 1.0.2.
+pfDevTools.requires('1.0.2')
 
-env = pfTools.Environment(PF_CORE_TEMPLATE_REPO_TAG='v0.0.2_for_openFPGATutorials')
+env = pfDevTools.Environment(PF_CORE_TEMPLATE_REPO_TAG='v0.0.2_for_openFPGATutorials')
 
 env.OpenFPGACore('src/config.toml',
                  extra_files=['src/assets/font_unscii_8x8_latin_uc.txt'])
