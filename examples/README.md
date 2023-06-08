@@ -4,11 +4,7 @@ This folder contains sample cores demonstrating various features of the openFPGA
 
 ### Prerequisites
 
-The build system relies on a docker image to provide consistent access to the Intel Quartus tools. You will therefore need to install [Docker Desktop](https://www.docker.com/get-started/) on your machine.
-
-You will also need to install the [pf-dev-tools](https://pypi.org/project/pf-dev-tools/), which in turns requires a [supported](https://didier.malenfant.net/blog/nerdy/2022/08/17/installing-python.html) version of Python.
-
-Finally you will need [git](https://git-scm.com) unless you're on macOS or Linux in which case it comes built-in.
+In order to build the core, you will need to install [pf-dev-tools](https://pypi.org/project/pf-dev-tools/) and its dependencies.
 
 ### Building the cores
 
