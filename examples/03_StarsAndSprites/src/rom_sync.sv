@@ -14,7 +14,7 @@ module rom_sync #(
     input wire [$clog2(DEPTH)-1:0] addr,
 
     // -- Outputs
-    output wire logic [WIDTH-1:0] data);
+    output logic [WIDTH-1:0] data);
 
     // -- Variables
     logic [WIDTH-1:0] memory[DEPTH];
