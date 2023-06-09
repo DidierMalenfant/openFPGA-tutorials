@@ -10,8 +10,8 @@ module rom_sync #(
     parameter INIT_FILE = "") (
 
     // -- Inputs
-    input wire logic clock,
-    input wire logic [$clog2(DEPTH)-1:0] addr,
+    input wire clock,
+    input wire [$clog2(DEPTH)-1:0] addr,
 
     // -- Outputs
     output wire logic [WIDTH-1:0] data);

@@ -5,28 +5,28 @@
 module sprite #(
 
     // -- Parameters
-    parameter WIDTH  = 8,                               // -- graphic width in pixels
-    parameter HEIGHT = 8,                               // -- graphic height in pixels
-    parameter SCALE_X = 1,                              // -- sprite width scale-factor
-    parameter SCALE_Y = 1,                              // -- sprite height scale-factor
-    parameter LSB= 1,                                   // -- first pixel in LSB
-    parameter COORD_WIDTH = 16,                         // -- screen coordinate width in bits
-    parameter ADDR_WIDTH = 9) (                         // -- width of graphic memory address bus
+    parameter WIDTH  = 8,                         // -- graphic width in pixels
+    parameter HEIGHT = 8,                         // -- graphic height in pixels
+    parameter SCALE_X = 1,                        // -- sprite width scale-factor
+    parameter SCALE_Y = 1,                        // -- sprite height scale-factor
+    parameter LSB= 1,                             // -- first pixel in LSB
+    parameter COORD_WIDTH = 16,                   // -- screen coordinate width in bits
+    parameter ADDR_WIDTH = 9) (                   // -- width of graphic memory address bus
         
     // -- Inputs
-    input wire logic reset_n,                           // -- reset on negative edge
-    input wire logic pixel_clock,                       // -- pixel clock
-    input wire logic start,                             // -- start control
-    input wire logic dma_avail,                         // -- memory access control
-    input wire logic signed [COORD_WIDTH-1:0] sx,       // -- horizontal screen position
-    input wire logic signed [COORD_WIDTH-1:0] spr_x,    // -- horizontal sprite position
-    input wire logic [WIDTH-1:0] data,                  // -- data from external memory
+    input wire reset_n,                           // -- reset on negative edge
+    input wire pixel_clock,                       // -- pixel clock
+    input wire start,                             // -- start control
+    input wire dma_avail,                         // -- memory access control
+    input wire signed [COORD_WIDTH-1:0] sx,       // -- horizontal screen position
+    input wire signed [COORD_WIDTH-1:0] spr_x,    // -- horizontal sprite position
+    input wire [WIDTH-1:0] data,                  // -- data from external memory
     
     // -- Outputs
-    output logic [ADDR_WIDTH-1:0] pos,                  // -- sprite line position
-    output wire logic pixel_on,                         // -- pixel draw enable (0 or 1)
-    output wire logic drawing,                          // -- sprite is drawing
-    output logic done);                                 // -- sprite drawing is complete
+    output logic [ADDR_WIDTH-1:0] pos,            // -- sprite line position
+    output wire pixel_on,                         // -- pixel draw enable (0 or 1)
+    output wire drawing,                          // -- sprite is drawing
+    output logic done);                           // -- sprite drawing is complete
        
     // -- Local parameters
     localparam SCALE_X_WIDTH = (SCALE_X == 1) ? 1 : $clog2(SCALE_X); 
@@ -35,17 +35,17 @@ module sprite #(
     localparam Y_WIDTH = $clog2(HEIGHT);
     
     // -- Variables
-    logic [WIDTH-1:0] spr_line;                         // -- local copy of sprite line
+    logic [WIDTH-1:0] spr_line;                   // -- local copy of sprite line
     
-    logic [X_WIDTH-1:0] ox;                             // -- position within sprite
+    logic [X_WIDTH-1:0] ox;                       // -- position within sprite
     logic [Y_WIDTH-1:0] oy;
     
-    logic [SCALE_X_WIDTH-1:0] cnt_x;                    // -- scale counters
+    logic [SCALE_X_WIDTH-1:0] cnt_x;              // -- scale counters
     logic [SCALE_Y_WIDTH-1:0] cnt_y;
     
-    wire logic last_pixel, load_line, last_line;
+    wire last_pixel, load_line, last_line;
     
-    integer i;                                          // -- for bit reversal in READ_MEM
+    integer i;                                    // -- for bit reversal in READ_MEM
     
     // -- Constants
     enum {

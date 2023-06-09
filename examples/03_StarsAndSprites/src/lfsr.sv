@@ -9,9 +9,9 @@ module lfsr #(
     parameter TAPS = 8'b10111000) (     // -- XOR taps
     
     // -- Inputs
-    input wire logic clock,             // -- clock
-    input wire logic reset,             // -- reset if high
-    input wire logic [LEN-1:0] seed,    // -- seed (uses default seed if zero)
+    input wire clock,                   // -- clock
+    input wire reset,                   // -- reset if high
+    input wire [LEN-1:0] seed,          // -- seed (uses default seed if zero)
     
     // -- Outputs
     output logic [LEN-1:0] value);

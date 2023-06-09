@@ -6,25 +6,25 @@ module sprites #(
 
     // -- Parameters
     parameter COORD_WIDTH = 16,
-    parameter signed SPR_X = 10,      // -- sprites' coordinates
+    parameter signed SPR_X = 10,                // -- sprites' coordinates
     parameter signed SPR_Y = 10) (    
 
     // -- Inputs
-    input wire logic reset_n,                       // -- reset on negative edge
-    input wire logic pixel_clock,                   // -- pixel clock
-    input wire logic hsync_start,                   // -- hsync if high
+    input wire reset_n,                         // -- reset on negative edge
+    input wire pixel_clock,                     // -- pixel clock
+    input wire hsync_start,                     // -- hsync if high
 
-    input wire logic signed [COORD_WIDTH-1:0] x,
-    input wire logic signed [COORD_WIDTH-1:0] y,
+    input wire signed [COORD_WIDTH-1:0] x,
+    input wire signed [COORD_WIDTH-1:0] y,
 
     // -- Outputs
-    output wire logic pixel_on);
+    output wire pixel_on);
     
     // -- Local Parameters
-    localparam SPR_CNT = 4;                         // -- number of sprites
-    localparam SPR_SCALE_X = 8;                     // -- enlarge sprite width by this factor
-    localparam SPR_SCALE_Y = 8;                     // -- enlarge sprite height by this factor
-    localparam SPR_DMA = 0 - (2 * SPR_CNT);         // -- start sprite DMA in h-blanking
+    localparam SPR_CNT = 4;                     // -- number of sprites
+    localparam SPR_SCALE_X = 8;                 // -- enlarge sprite width by this factor
+    localparam SPR_SCALE_Y = 8;                 // -- enlarge sprite height by this factor
+    localparam SPR_DMA = 0 - (2 * SPR_CNT);     // -- start sprite DMA in h-blanking
 
     localparam integer SPR_XS[SPR_CNT] = '{
         SPR_X,
@@ -42,12 +42,12 @@ module sprites #(
     };
 
     // -- Variables
-    wire logic spr_start;                                       // -- signal to start sprite drawing
+    wire spr_start;                                             // -- signal to start sprite drawing
    
     logic [FONT_ROM_ADDR_WIDTH-1:0] spr_glyph_line[SPR_CNT];    // -- font ROM address
     logic [SPR_CNT-1:0] spr_fdma;                               // -- font ROM DMA slots
     
-    wire logic [SPR_CNT-1:0] pixels_on;                         // -- sprites pixel on or off
+    wire [SPR_CNT-1:0] pixels_on;                               // -- sprites pixel on or off
 
     integer i;                                                  // -- for looping over sprite signals
 
@@ -100,7 +100,7 @@ module sprites #(
     
     // -- Variables
     logic [FONT_ROM_ADDR_WIDTH-1:0] font_rom_addr;
-    wire logic [FONT_WIDTH-1:0] font_rom_data;              // -- line of glyph pixels
+    wire [FONT_WIDTH-1:0] font_rom_data;              // -- line of glyph pixels
     
     // -- Modules
     rom_sync #(.WIDTH(FONT_WIDTH), .DEPTH(FONT_ROM_DEPTH), .INIT_FILE(FONT_FILE)) font_rom (

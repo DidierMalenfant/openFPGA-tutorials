@@ -5,7 +5,7 @@
 module video_sync #(
 
     // -- Parameters
-    parameter COORD_WIDTH = 16,                             // -- screen coordinate width in bits
+    parameter COORD_WIDTH = 16,                       // -- screen coordinate width in bits
 
     parameter HORIZONTAL_TOTAL = 400,
     parameter VERTICAL_TOTAL = 512,
@@ -17,16 +17,16 @@ module video_sync #(
     parameter VERTICAL_BACK_PORCH = 15) (
 
     // -- Inputs
-    input wire logic reset_n,                               // -- reset on negative edge
-    input wire logic pixel_clock,                           // -- pixel clock
+    input wire reset_n,                               // -- reset on negative edge
+    input wire pixel_clock,                           // -- pixel clock
     
     // -- Outputs
     output logic signed [COORD_WIDTH-1:0] x, y,
     output logic [15:0] frame_count,
 
-    output logic video_enable,                              // -- video enable if high
-    output logic vsync_start,                               // -- vsync if high
-    output logic hsync_start);                              // -- hsync if high
+    output logic video_enable,                        // -- video enable if high
+    output logic vsync_start,                         // -- vsync if high
+    output logic hsync_start);                        // -- hsync if high
     
     // -- Local parameters
     localparam signed HORIZONTAL_START = -HORIZONTAL_BACK_PORCH;

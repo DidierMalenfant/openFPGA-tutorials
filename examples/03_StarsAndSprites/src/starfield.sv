@@ -12,12 +12,12 @@ module starfield #(
     parameter MASK = 21'hFFF) (
     
     // -- Inputs
-    input wire logic reset_n,                                   // -- reset on negative edge
-    input wire logic pixel_clock,                               // -- pixel clock
+    input wire reset_n,                                         // -- reset on negative edge
+    input wire pixel_clock,                                     // -- pixel clock
     
     // -- Outputs
-    output wire logic onoff,                                    // -- star on
-    output wire logic [7:0] brightness);                        // -- star brightness
+    output wire onoff,                                          // -- star on
+    output wire [7:0] brightness);                              // -- star brightness
     
     // -- Local parameters
     localparam COUNTER_END = 21'(WIDTH * HEIGHT + INC - 1);     // -- counter starts at zero, so sub 1

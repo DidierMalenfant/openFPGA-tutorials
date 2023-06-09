@@ -5,8 +5,8 @@
 module display (
 
     // -- Inputs
-    input wire logic reset_n,          // -- reset on negative edge
-    input wire logic pixel_clock,      // -- pixel clock
+    input wire reset_n,                 // -- reset on negative edge
+    input wire pixel_clock,             // -- pixel clock
     
     // -- Outputs
     output logic [23:0] video_rgb,      // -- pixel rgb value
@@ -36,11 +36,11 @@ module display (
     // -- Variables
     logic signed [COORD_WIDTH-1:0] x, y;
     
-    wire logic [23:0] star_rgb;
+    wire [23:0] star_rgb;
 
     logic [23:0] copper_rgb;
 
-    wire logic spr_pixel_on;
+    wire spr_pixel_on;
 
     // -- Combinational part
     always_comb begin

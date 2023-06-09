@@ -5,8 +5,8 @@
 module display (
 
     // -- Inputs
-    input wire logic reset_n,           // -- reset on negative edge
-    input wire logic pixel_clock,       // -- pixel clock
+    input wire reset_n,                 // -- reset on negative edge
+    input wire pixel_clock,             // -- pixel clock
 
     // -- Outputs
     output logic [23:0] video_rgb,      // -- pixel rgb value

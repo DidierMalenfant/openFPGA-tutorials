@@ -9,16 +9,16 @@ module starfields #(
     parameter HEIGHT = 512) (
 
     // -- Inputs
-    input wire logic reset_n,               // -- reset on negative edge
-    input wire logic pixel_clock,           // -- pixel clock
+    input wire reset_n,               // -- reset on negative edge
+    input wire pixel_clock,           // -- pixel clock
     
     // -- Outputs
-    output wire logic [23:0] pixel_rgb);    // -- pixel rgb value
+    output wire [23:0] pixel_rgb);    // -- pixel rgb value
     
     // -- Variables
-    wire logic sf1_on, sf2_on, sf3_on;
-    wire logic [7:0] sf1_star, sf2_star, sf3_star;
-    wire logic [7:0] starlight;
+    wire sf1_on, sf2_on, sf3_on;
+    wire [7:0] sf1_star, sf2_star, sf3_star;
+    wire [7:0] starlight;
     
     // -- Combinatorial part
     assign starlight = (sf1_on) ? sf1_star[7:0] :
