@@ -44,7 +44,7 @@ module display (
     logic [15:0] frame_count;
 
     // -- Sequential part
-    always @(posedge pixel_clock or negedge reset_n) begin
+    always_ff @(posedge pixel_clock or negedge reset_n) begin
         if (~reset_n) begin
             x <= HORIZONTAL_START;
             y <= VERTICAL_START;
